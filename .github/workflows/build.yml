@@ -19,7 +19,5 @@ jobs:
               run: pip install pytoulbar2
 
             - name: test pytb2
-              run: |
-                ulimit -c unlimited
-                python -c "import pytoulbar2"
+              run: python -c "import pytoulbar2"
 
