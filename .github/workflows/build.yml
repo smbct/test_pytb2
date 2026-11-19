@@ -17,21 +17,9 @@ jobs:
     
             - name: install pytb2
               run: pip install pytoulbar2
- 
-            - name: Set cores to get stored in /cores
-              run: |
-                sudo mkdir /cores
-                sudo chmod 777 /cores
-                # Core filenames will be of the form executable.pid.timestamp:
-                sudo bash -c 'echo "/cores/%e.%p.%t" > /proc/sys/kernel/core_pattern'
-   
+
             - name: test pytb2
               run: |
                 ulimit -c unlimited
                 python -c "import pytoulbar2"
 
-            - uses: actions/download-artifact@v8
-              if: ${{ failure() }}  # Run only if something went wrong
-              with:
-                name: cores
-                path: /cores
