@@ -23,6 +23,6 @@ jobs:
 
       - name: test pytb2
         run: |
-	      lscpu
-		  python -c "import pytoulbar2"
+          lscpu
+          python -c "import pytoulbar2"
 
