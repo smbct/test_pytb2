@@ -30,7 +30,7 @@ jobs:
                 ulimit -c unlimited
                 python -c "import pytoulbar2"
 
-            - uses: actions/upload-artifact@v3
+            - uses: actions/download-artifact@v8
               if: ${{ failure() }}  # Run only if something went wrong
               with:
                 name: cores
