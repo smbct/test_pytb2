@@ -6,7 +6,12 @@ on:
 jobs:
 
     build:
-        runs-on: ubuntu-latest
+		
+		strategy:
+      	  matrix:
+            runs-on: [ubuntu-latest]
+            name: [1...10]
+
         name: build
         steps:
             - uses: actions/checkout@v6
@@ -19,5 +24,7 @@ jobs:
               run: pip install pytoulbar2
 
             - name: test pytb2
-              run: python -c "import pytoulbar2"
+              run: |
+				lscpu
+				python -c "import pytoulbar2"
 
