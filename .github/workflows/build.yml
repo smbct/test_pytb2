@@ -7,24 +7,24 @@ jobs:
 
     build:
 		
-		strategy:
-      	  matrix:
-            runs-on: [ubuntu-latest]
-            name: [1...10]
+	  strategy:
+        matrix:
+          runs-on: [ubuntu-latest]
+          name: [1...10]
 
         name: build
         steps:
-            - uses: actions/checkout@v6
-            - uses: actions/setup-python@v6
-              with:
-                python-version: "3.13"
-                cache: "pip"
+          - uses: actions/checkout@v6
+          - uses: actions/setup-python@v6
+            with:
+              python-version: "3.13"
+              cache: "pip"
     
-            - name: install pytb2
-              run: pip install pytoulbar2
+          - name: install pytb2
+            run: pip install pytoulbar2
 
-            - name: test pytb2
-              run: |
-				lscpu
-				python -c "import pytoulbar2"
+          - name: test pytb2
+            run: |
+			  lscpu
+			  python -c "import pytoulbar2"
 
