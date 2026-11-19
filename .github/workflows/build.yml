@@ -17,4 +17,4 @@ jobs:
             - name: install pytb2
               run: pip install pytoulbar2
             - name: test pytb2
-              run: python -c "import pytoulbar2"
+              run: python -v -c "import pytoulbar2"
