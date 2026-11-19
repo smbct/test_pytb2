@@ -15,6 +15,6 @@ jobs:
                 python-version: "3.13"
                 cache: "pip"
             - name: install pytb2
-                run: pip install pytoulbar2
+              run: pip install pytoulbar2
             - name: test pytb2
-                run: python -c "import pytoulbar2"
+              run: python -c "import pytoulbar2"
